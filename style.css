@@ -1,0 +1,541 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ===== Минималистичный header ===== */
+header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo i {
+  color: #5f5b4b;
+  font-size: 1.5rem;
+}
+
+nav {
+  display: flex;
+  gap: 38px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: 450;
+  font-size: 1rem;
+  transition: color 0.2s;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 4px;
+}
+
+nav a:hover {
+  color: #000;
+  border-bottom-color: #b0aa9a;
+}
+
+/* ===== Hero с фоновым изображением ===== */
+.hero {
+  position: relative;
+  padding: 100px 0 120px;
+  text-align: center;
+  background: #1a1a1a;
+  overflow: hidden;
+  background-image: url('https://i.pinimg.com/originals/23/e5/ec/23e5ec18253c31533c5f0cfff53d34b1.jpg?nii=t');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.05) 30%, #ffffff 100%);
+  z-index: 2;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 450;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.hero .location {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+
+.hero .location i {
+  font-size: 0.9rem;
+}
+
+.hero-description {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 500px;
+  margin: 0 auto 28px;
+  font-weight: 350;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+
+/* ===== Кнопки ===== */
+.btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #1a1a1a;
+  padding: 14px 40px;
+  border-radius: 32px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  position: relative;
+  z-index: 3;
+}
+
+.btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-outline:hover {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: #ffffff;
+}
+
+/* ===== Общие стили секций ===== */
+section {
+  padding: 90px 0;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 470;
+  text-align: center;
+  margin-bottom: 14px;
+  color: #121212;
+  letter-spacing: -0.8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b6b6b;
+  margin-bottom: 48px;
+  font-size: 1.05rem;
+  font-weight: 350;
+}
+
+/* ===== Меню ===== */
+#menu {
+  background: #ffffff;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.menu-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f2f2f2;
+}
+
+.menu-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #f3f3f0;
+}
+
+.menu-info {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-info h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.desc {
+  color: #5e5e5e;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+  flex: 1;
+  font-weight: 350;
+}
+
+.price {
+  font-weight: 520;
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+
+.add-btn {
+  background: #f5f5f5;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 28px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #1a1a1a;
+  width: fit-content;
+  font-size: 0.9rem;
+}
+
+.add-btn:hover {
+  background: #e8e8e8;
+}
+
+/* ===== Бронирование с фоновым изображением ===== */
+#booking {
+  position: relative;
+  padding: 100px 0 120px;
+  background: #1a1a1a;
+  overflow: hidden;
+  background-image: url('https://www.anfilada-design.ru/test/wp-content/uploads/2018/05/8.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#booking::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+#booking::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, transparent 0%, rgba(255,255,255,0.05) 30%, #ffffff 100%);
+  z-index: 2;
+}
+
+#booking .container {
+  position: relative;
+  z-index: 3;
+}
+
+#booking h2 {
+  color: #ffffff;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+#booking .subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+
+.booking-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 28px;
+  padding: 48px 40px;
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.form-row input,
+.form-row select {
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 0.95rem;
+  outline: none;
+  min-width: 160px;
+  flex: 1 1 170px;
+  transition: 0.3s;
+  color: #ffffff;
+}
+
+.form-row input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-row select {
+  color: #ffffff;
+}
+
+.form-row select option {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
+}
+
+.booking-btn {
+  background: #ffffff;
+  border: none;
+  color: #1a1a1a;
+  padding: 14px 34px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.booking-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.confirmation-message {
+  margin-top: 22px;
+  font-weight: 450;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 22px;
+  border-radius: 30px;
+  display: inline-block;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Контакты ===== */
+#contacts {
+  background: #ffffff;
+  position: relative;
+}
+
+#contacts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#contacts .container {
+  position: relative;
+  z-index: 2;
+}
+
+.contacts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.contact-card {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid #f0f0f0;
+  min-width: 230px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.contact-card i {
+  font-size: 1.7rem;
+  color: #4a4944;
+}
+
+.contact-text h4 {
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  color: #3d3d3d;
+}
+
+.contact-text p {
+  color: #1a1a1a;
+  font-weight: 450;
+}
+
+.phone-link-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.phone-link {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #ccc;
+}
+
+.phone-link i {
+  margin-right: 4px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 32px 0;
+  color: #7a7a7a;
+  border-top: 1px solid #f2f2f2;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 680px) {
+  .hero {
+    padding: 60px 0 80px;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  nav {
+    gap: 18px;
+  }
+  #booking {
+    padding: 60px 0 80px;
+    background-attachment: scroll;
+  }
+  .booking-box {
+    padding: 30px 20px;
+  }
+}

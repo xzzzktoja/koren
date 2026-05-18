@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>У Корня | Ресторан • Нижний Новгород</title>
+  <!-- Font Awesome 6 для иконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Подключаем внешний CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo"><i class="fas fa-seedling"></i>У Корня</a>
+      <nav>
+        <a href="#menu">Меню</a>
+        <a href="#booking">Бронь</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero с фоновым изображением -->
+  <section class="hero">
+    <div class="container">
+      <h1>У Корня</h1>
+      <p class="location"><i class="fas fa-map-pin"></i> Нижний Новгород, ул. Пушкина, д. 5</p>
+      <p class="hero-description">
+        Честная кухня, природные вкусы, минимализм в деталях.
+      </p>
+      <a href="#booking" class="btn">Забронировать стол</a>
+      <a href="#menu" class="btn btn-outline">Меню</a>
+    </div>
+  </section>
+
+  <!-- Меню -->
+  <section id="menu">
+    <div class="container">
+      <h2>Меню</h2>
+      <p class="subtitle">Сезонные блюда от шефа</p>
+      <div class="menu-grid" id="menuContainer">
+        <!-- Заполняется через JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Бронирование с фоновым изображением -->
+  <section id="booking">
+    <div class="container">
+      <div class="booking-box">
+        <h2>Забронировать столик</h2>
+        <p class="subtitle">Оставьте данные — мы подтвердим запись</p>
+        <div class="form-row" id="bookingForm">
+          <input type="text" id="guestName" placeholder="Имя" required>
+          <input type="tel" id="guestPhone" placeholder="Телефон" value="+7 910 126 99 24" required>
+          <input type="date" id="reserveDate" required>
+          <select id="reserveTime">
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00" selected>19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+          </select>
+          <select id="guestCount">
+            <option value="1">1 гость</option>
+            <option value="2" selected>2 гостя</option>
+            <option value="3">3 гостя</option>
+            <option value="4">4 гостя</option>
+            <option value="5">5 гостей</option>
+            <option value="6">6 гостей</option>
+          </select>
+          <button type="button" id="bookTableBtn" class="booking-btn">Забронировать</button>
+        </div>
+        <div id="bookingMessage" class="confirmation-message" style="display: none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts">
+    <div class="container">
+      <h2>Контакты</h2>
+      <p class="subtitle">Мы рядом с вами</p>
+      <div class="contacts-grid">
+        <div class="contact-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="contact-text">
+            <h4>Адрес</h4>
+            <p>Нижний Новгород, ул. Пушкина, д. 5</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-phone"></i>
+          <div class="contact-text">
+            <h4>Телефон</h4>
+            <p>8 910 126 99 24</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="far fa-clock"></i>
+          <div class="contact-text">
+            <h4>Часы работы</h4>
+            <p>Ежедневно 12:00 – 23:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-link-wrapper">
+        <a href="tel:89101269924" class="phone-link">
+          <i class="fas fa-phone-alt"></i> Позвонить: 8 910 126 99 24
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Ресторан «У Корня» — Нижний Новгород</p>
+    </div>
+  </footer>
+
+  <!-- Подключаем внешний JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
